@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "erudite-battles",
+  "private_key_id": "0de6d72b4d6d8479a53251d6f44ca077802ff2f0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCLDOPyUfCv5/VR\nzQ0DV2CmPSCyeR+5wZUbkQDxe2jKKqMdXz6CzSprBLAp76qdhcQH9ZdTvDf+wElF\nKmJ19j7WHfibX12oG24ifmcU5YOxMaGrAeyHiCU92BvLlN5GBesiYqMtqx8ShVG8\neXgThgivdq7b03zZqhjKGYwB2FYUYTcD9/35gRoJgqnKHT+5KWEUFelIGilUDqm7\nGfBh9ThotIFHdYx/4KOzRK0TytP0X17KRcRC+XfatY4Fe8D8njQOcvOB3nNN+77d\nKHWcZ11RDEZh5RmV/XLYjbMx+hjkDJhUhXn3rVtOrDSxvmwsESbozJq9RAX8PS4Y\ndDd5ZqhtAgMBAAECggEAGMWhoGx3qCb3XezdaiB5b/RI7HLGs6WopkIVfG/jcczZ\nxWRP8yaQ7YLmzXnMmAaaL17R6FGKWkCwbPmJlAFcHXI2dZuuSEImw09oluDyrrEs\nX5ZWqKiZFeT3wrORS8FHLBeNgZfQT9DfiGfNfBDvYC8RJMmPHwn+I5ccicGcSEHs\nORbspl49GSwG2HNETYEwtBMQnKylHsyK6PpQ4SO8YgkIxoKY+dyxCU+UpTxRRQt2\nbWwZTCnakTAfBV1VV1pJUaaS3/xBtqWEDuvTAH7emsR6X/YKDw8TmDIK+wAl46hz\nSLwZ+qMzYg5JOY3O/iovGCLz4GKb+AlIynGcPHI0cwKBgQDAxNeySy+pvltEri7G\nUIKxxzjvY6wvCzjsmHUVZZQmDsnLnMySFqIx7CaKRVVN96JxdK5fv2uZd0WK7VXv\n9rX/lL7/OVR7gw9dHuvz2sNdlE5EJPztcTGWPL0EQKkfGdcQkQlw9e3z0/FLE9/7\nX/4qShXTzMxcXhHiRytK0dj6mwKBgQC4qTO/+3qjiYU3jsz8wIgdcOSioati+83t\nsMl0Fj/oYOFXHqF9m5U7FSwxEAT2/4oaRlSDQnwU2jJteEldi1vAqYxjQwWHbDgF\n3M3bkf9oR1YWDLQ07xtfu4+2RqlUeysgqYxaxor3lYgBLhDyXCifURVBzoEEbubK\nlxKkXMZ1lwKBgE5810YlDtcSRp8EPM9KYKx57VirQKQ28YqD2MhJf7SvOMLKqRCi\nXo/tExQhfsYsGdwQIh+iFPF7erlCQUdfMGNL8SiB80AG8O59dJzpabpkdCmS1djn\nycTeHifpG/Mp1kNMioeP2r74gLqM8Rms0BPv7ks6i8rgEnALgjkIkEwZAoGAWpFq\nNzvRH4pgUypvsXuAhugKyxT96RNVIcH2XEBZYdC6VK9KRz/ahlrRDNMtjDMy+cYK\nx0IBd3y5BOXdHcsu2iSOHVUOzieupnlwYcOOgAeU2kWq0NeBFof4aU7o1+187o0Z\nsJ/2Io4tYV7Fowi+R71N7rOopZL7ENvdoc167MsCgYATyEDYHZFlISHPQ+l3V2tC\nDJNXyzYhmvo/zl1RZaWluZNciNnxYi7YXkvE/Yj/ga9Fut5yAJFBjS0ScclBlkzX\nfyHH64cOk1bg+lHHTikYZM1J70+D7emdydtvB96igBHGwOctQTg31QgusQ1nx7iO\ncccS1nlq462Xc77xo5aZRw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "java-service@erudite-battles.iam.gserviceaccount.com",
+  "client_id": "116124252655247555638",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/java-service%40erudite-battles.iam.gserviceaccount.com"
+}
