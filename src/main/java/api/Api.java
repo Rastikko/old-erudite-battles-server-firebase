@@ -1,6 +1,6 @@
 package api;
 
-import game.Firebase;
+import eurditebattles.Firebase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
