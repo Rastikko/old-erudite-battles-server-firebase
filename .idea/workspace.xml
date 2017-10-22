@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c960c54-bcdb-45fe-a39e-63a3b16e5041" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/abstracts/FirebaseFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/abstracts/FirebaseHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/builders/GameBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/builders/GameEruditeBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/builders/GamePlayerBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/handlers/GameHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/handlers/PlayerHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/match/GameCreator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/models/GameEruditeModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/models/GameModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/models/GamePlayerModel.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/handlers/PlayerHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/matchmaking/MatchCreator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/game/Firebase.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/game/handlers/PlayerHandler$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/game/handlers/PlayerHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/game/matchmaking/MatchCreator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/game/models/PlayerModel.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/game/Firebase.java" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/Firebase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/game/models/PlayerModel.java" afterPath="$PROJECT_DIR$/src/main/java/eurditebattles/models/PlayerModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/api/Api.class" afterPath="$PROJECT_DIR$/target/classes/api/Api.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/Api.java" afterPath="$PROJECT_DIR$/src/main/java/api/Api.java" />
-    </list>
+    <list default="true" id="3c960c54-bcdb-45fe-a39e-63a3b16e5041" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -304,40 +278,6 @@
             <path>
               <item name="eruditebattlesserver" type="b2602c69:ProjectViewProjectNode" />
               <item name="eruditebattlesserver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eruditebattlesserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eruditebattlesserver" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eruditebattlesserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eruditebattlesserver" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eruditebattlesserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eruditebattlesserver" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eruditebattlesserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eruditebattlesserver" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eruditebattlesserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eruditebattlesserver" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="eurditebattles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
