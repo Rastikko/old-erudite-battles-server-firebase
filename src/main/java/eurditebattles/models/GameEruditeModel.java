@@ -1,17 +1,26 @@
 package eurditebattles.models;
 
 public class GameEruditeModel {
-    private boolean isPlayer;
+    private boolean isMainErudite;
     private Integer health;
     private Integer healthRemaining;
     private Integer attack;
+    private String gamePlayer;
 
-    public boolean isPlayer() {
-        return isPlayer;
+    public String getGamePlayer() {
+        return gamePlayer;
     }
 
-    public void setIsPlayer(boolean isPlayer) {
-        this.isPlayer = isPlayer;
+    public void setGamePlayer(String gamePlayer) {
+        this.gamePlayer = gamePlayer;
+    }
+
+    public boolean isMainErudite() {
+        return isMainErudite;
+    }
+
+    public void setIsMainErudite(boolean isMainErudite) {
+        this.isMainErudite = isMainErudite;
     }
 
     public Integer getHealth() {

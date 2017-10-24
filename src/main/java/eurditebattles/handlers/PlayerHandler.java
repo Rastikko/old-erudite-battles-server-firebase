@@ -3,7 +3,7 @@ package eurditebattles.handlers;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import eurditebattles.abstracts.FirebaseHandler;
-import eurditebattles.match.GameCreator;
+import eurditebattles.match.MatchCreator;
 import eurditebattles.models.PlayerModel;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class PlayerHandler extends FirebaseHandler {
     protected void onSubresourceChangeHandler(DataSnapshot dataSnapshot) {
         PlayerModel player = dataSnapshot.getValue(PlayerModel.class);
         if (player.getState().equals("FIND_MATCH_VS_BOT")) {
-            GameCreator.createNewMatch(player.getState(), dataSnapshot.getKey());
+            MatchCreator.createNewMatchVsBot(dataSnapshot.getKey());
         }
     }
 }

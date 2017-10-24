@@ -1,37 +1,45 @@
 package eurditebattles.models;
 
-import java.util.List;
+import java.util.Map;
 
 public class GamePlayerModel {
-
-    private List<String> deckCardIds;
-    private List<String> handCardIds;
-    private List<String> gameEruditeIds;
+    private Map<String, Boolean> deckCards;
+    private Map<String, Boolean> handCards;
+    private Map<String, Boolean> gameErudites;
     private Integer energy;
-    private String playerId;
+    private String player;
+    private String game;
 
-    public List<String> getDeckCardIds() {
-        return deckCardIds;
+    public Map<String, Boolean> getDeckCards() {
+        return deckCards;
     }
 
-    public void setDeckCardIds(List<String> deckCardIds) {
-        this.deckCardIds = deckCardIds;
+    public void setDeckCards(Map<String, Boolean> deckCards) {
+        this.deckCards = deckCards;
     }
 
-    public List<String> getHandCardIds() {
-        return handCardIds;
+    public Map<String, Boolean> getHandCards() {
+        return handCards;
     }
 
-    public void setHandCardIds(List<String> handCardIds) {
-        this.handCardIds = handCardIds;
+    public void setHandCards(Map<String, Boolean> handCards) {
+        this.handCards = handCards;
     }
 
-    public List<String> getGameEruditeIds() {
-        return gameEruditeIds;
+    public Map<String, Boolean> getGameErudites() {
+        return gameErudites;
     }
 
-    public void setGameEruditeIds(List<String> gameEruditeIds) {
-        this.gameEruditeIds = gameEruditeIds;
+    public void setGameErudites(Map<String, Boolean> gameErudites) {
+        this.gameErudites = gameErudites;
+    }
+
+    public String getGame() {
+        return game;
+    }
+
+    public void setGame(String game) {
+        this.game = game;
     }
 
     public Integer getEnergy() {
@@ -42,11 +50,11 @@ public class GamePlayerModel {
         this.energy = energy;
     }
 
-    public String getPlayerId() {
-        return playerId;
+    public String getPlayer() {
+        return player;
     }
 
-    public void setPlayerId(String playerId) {
-        this.playerId = playerId;
+    public void setPlayer(String player) {
+        this.player = player;
     }
 }

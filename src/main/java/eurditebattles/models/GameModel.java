@@ -1,15 +1,16 @@
 package eurditebattles.models;
 
 import java.util.List;
+import java.util.Map;
 
 public class GameModel {
-    public List<String> getGamePlayersIds() {
-        return gamePlayersIds;
+    public Map<String, Boolean> getGamePlayers() {
+        return gamePlayers;
     }
 
-    public void setGamePlayersIds(List<String> gamePlayersIds) {
-        this.gamePlayersIds = gamePlayersIds;
+    public void setGamePlayers(Map<String, Boolean> gamePlayers) {
+        this.gamePlayers = gamePlayers;
     }
 
-    private List<String> gamePlayersIds;
+    private Map<String, Boolean> gamePlayers;
 }
