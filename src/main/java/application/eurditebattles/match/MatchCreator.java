@@ -3,12 +3,14 @@ package application.eurditebattles.match;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import application.eurditebattles.builders.GameBuilder;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class MatchCreator {
-    public static void createNewMatchVsBot(String playerId) {
+    public void createNewMatchVsBot(String playerId) {
         System.out.println("EBS -- Creating new application.eurditebattles VS bot for ");
         GameBuilder game = new GameBuilder(playerId);
 

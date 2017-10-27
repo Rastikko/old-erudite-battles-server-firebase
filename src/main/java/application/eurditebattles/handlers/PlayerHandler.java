@@ -8,7 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PlayerHandler extends AbstractHandler {
 
-    public PlayerHandler() {
+    MatchCreator matchCreator;
+
+    public PlayerHandler(MatchCreator matchCreator) {
+        this.matchCreator = matchCreator;
         init("players");
     }
 
@@ -16,7 +19,7 @@ public class PlayerHandler extends AbstractHandler {
     protected void onSubresourceChangeHandler(DataSnapshot dataSnapshot) {
         PlayerModel player = dataSnapshot.getValue(PlayerModel.class);
         if (player.state.equals("FIND_MATCH_VS_BOT")) {
-            MatchCreator.createNewMatchVsBot(dataSnapshot.getKey());
+            matchCreator.createNewMatchVsBot(dataSnapshot.getKey());
         }
     }
 }
