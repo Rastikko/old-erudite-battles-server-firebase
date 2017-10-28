@@ -1,6 +1,7 @@
 package application.eurditebattles.builders;
 
 import application.eurditebattles.models.GamePlayerModel;
+import application.eurditebattles.types.BattleTypes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,25 +12,29 @@ public class GamePlayerBuilder extends AbstractBuilder {
         this.parentResource = "gamePlayers";
         this.generateKey();
 
-        Map<String, Boolean> deck = new HashMap<>();
-        Map<String, Boolean> hand = new HashMap<>();
-        Map<String, Boolean> erudites = new HashMap<>();
+        Map<String, Boolean> deckCards = new HashMap<>();
+
+        String eruditeName = "Peter Shor";
+        Integer baseAttack = 200;
+        Integer baseBarrier = 100;
+        Integer baseHealth = 500;
+        Integer damageTaken = 0;
         Integer energy = 1;
+        String battleType = BattleTypes.FACTORIZATION.name();
 
-        // TODO: the deck should be distributing an erudie every 4 cards
-        for (int i = 0; i < 10; i++) {
-            deck.put("1", true);
-        }
-
-        GameEruditeBuilder erudite = new GameEruditeBuilder(this.reference.getKey());
-        erudites.put(erudite.getReference().getKey(), true);
+        deckCards.put("1", true);
+        deckCards.put("2", true);
 
         GamePlayerModel gamePlayer = new GamePlayerModel();
-        gamePlayer.player = playerId;
-        gamePlayer.deckCards = deck;
-        gamePlayer.handCards = hand;
-        gamePlayer.gameErudites = erudites;
+        gamePlayer.eruditeName = eruditeName;
+        gamePlayer.baseAttack = baseAttack;
+        gamePlayer.baseBarrier = baseBarrier;
+        gamePlayer.baseHealth = baseHealth;
+        gamePlayer.damageTaken = damageTaken;
         gamePlayer.energy = energy;
+        gamePlayer.battleType = battleType;
+        gamePlayer.deckCards = deckCards;
+        gamePlayer.player = playerId;
         gamePlayer.game = gameId;
 
         save(gamePlayer);
