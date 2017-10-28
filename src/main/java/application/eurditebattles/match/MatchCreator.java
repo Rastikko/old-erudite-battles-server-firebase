@@ -1,5 +1,6 @@
 package application.eurditebattles.match;
 
+import application.eurditebattles.types.PlayerStateType;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import application.eurditebattles.builders.GameBuilder;
@@ -18,9 +19,13 @@ public class MatchCreator {
                 .getInstance()
                 .getReference("players/" + playerId);
 
+        Map<String, String> gameReference = new HashMap<>();
+        gameReference.put("id", game.getReference().getKey());
+        gameReference.put("type", "game");
+
         Map<String, Object> childUpdate = new HashMap<>();
-        childUpdate.put("state", "IN_GAME");
-        childUpdate.put("gameId", game.getReference().getKey());
+        childUpdate.put("state", PlayerStateType.IN_GAME.name());
+        childUpdate.put("game", gameReference);
         playersRef.updateChildren(childUpdate);
     }
 }

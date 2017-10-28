@@ -25,6 +25,15 @@ public class GamePlayerBuilder extends AbstractBuilder {
         deckCards.put("1", true);
         deckCards.put("2", true);
 
+        Map<String, String> gameReference = new HashMap<>();
+        gameReference.put("id", gameId);
+        gameReference.put("type", "game");
+
+
+        Map<String, String> playerReference = new HashMap<>();
+        gameReference.put("id", playerId);
+        gameReference.put("type", "player");
+
         GamePlayerModel gamePlayer = new GamePlayerModel();
         gamePlayer.eruditeName = eruditeName;
         gamePlayer.baseAttack = baseAttack;
@@ -34,8 +43,8 @@ public class GamePlayerBuilder extends AbstractBuilder {
         gamePlayer.energy = energy;
         gamePlayer.battleType = battleType;
         gamePlayer.deckCards = deckCards;
-        gamePlayer.player = playerId;
-        gamePlayer.game = gameId;
+        gamePlayer.player = gameReference;
+        gamePlayer.game = playerReference;
 
         save(gamePlayer);
     }

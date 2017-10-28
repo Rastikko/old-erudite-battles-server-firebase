@@ -13,6 +13,6 @@ public class GamePlayerModel {
     public String battleType;
     public Map<String, Boolean> deckCards;
     public Map<String, Boolean> handCards;
-    public String player;
-    public String game;
+    public Map<String, String> player;
+    public Map<String, String> game;
 }

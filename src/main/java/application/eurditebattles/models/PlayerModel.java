@@ -1,7 +1,9 @@
 package application.eurditebattles.models;
 
+import java.util.Map;
+
 public class PlayerModel {
     public String username;
     public String state;
-    public String gameId;
+    public Map<String, String> game;
 }
