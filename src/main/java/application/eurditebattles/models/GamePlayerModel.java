@@ -11,8 +11,8 @@ public class GamePlayerModel {
     public Integer damageTaken;
     public Integer energy;
     public String battleType;
-    public String player;
     public Map<String, Boolean> deckCards;
     public Map<String, Boolean> handCards;
+    public String player;
     public String game;
 }
