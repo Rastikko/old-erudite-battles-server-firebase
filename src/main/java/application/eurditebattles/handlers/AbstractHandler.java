@@ -1,15 +1,13 @@
 package application.eurditebattles.handlers;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public abstract class AbstractHandler {
@@ -27,23 +25,26 @@ public abstract class AbstractHandler {
         this.resourceReference = FirebaseDatabase.getInstance().getReference(resource);
         this.subresourceReferences = new HashMap<>();
 
-        resourceReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        ChildEventListener listener = new ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                resourceDataChange(dataSnapshot);
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                addSubresourceListener(dataSnapshot);
             }
 
             @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
+
+            @Override
             public void onCancelled(DatabaseError databaseError) {}
-        });
-    }
+        };
 
-    void resourceDataChange(DataSnapshot dataSnapshot) {
-        Iterable<DataSnapshot> subresources = dataSnapshot.getChildren();
-
-        for (DataSnapshot subresource : subresources) {
-            addSubresourceListener(subresource);
-        }
+        this.resourceReference.addChildEventListener(listener);
     }
 
     void addSubresourceListener(DataSnapshot subresource) {
@@ -53,7 +54,7 @@ public abstract class AbstractHandler {
 
         System.out.println("EBS - addSubresourceListener: " + this.resource + "/" + subresource.getKey());
 
-        subresourceReference.addValueEventListener(new ValueEventListener() {
+        ValueEventListener listener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 onSubresourceChangeHandler(dataSnapshot);
@@ -61,10 +62,13 @@ public abstract class AbstractHandler {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {}
-        });
+        };
+
+        subresourceReference.addValueEventListener(listener);
 
         this.subresourceReferences.put(subresourceReference.getKey(), subresourceReference);
     }
 
+    // TODO: this could be a lamda
     protected abstract void onSubresourceChangeHandler(DataSnapshot dataSnapshot);
 }
