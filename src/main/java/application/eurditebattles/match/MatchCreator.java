@@ -13,6 +13,7 @@ import java.util.Map;
 public class MatchCreator {
     public void createNewMatchVsBot(String playerId) {
         System.out.println("EBS -- Creating new application.eurditebattles VS bot for ");
+
         GameBuilder game = new GameBuilder(playerId);
 
         DatabaseReference playersRef = FirebaseDatabase

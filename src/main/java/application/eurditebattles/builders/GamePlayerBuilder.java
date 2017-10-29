@@ -29,7 +29,6 @@ public class GamePlayerBuilder extends AbstractBuilder {
         gameReference.put("id", gameId);
         gameReference.put("type", "game");
 
-
         Map<String, String> playerReference = new HashMap<>();
         gameReference.put("id", playerId);
         gameReference.put("type", "player");
