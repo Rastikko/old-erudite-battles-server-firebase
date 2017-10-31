@@ -3,7 +3,6 @@ package application;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseCredentials;
-import application.eurditebattles.handlers.PlayerHandler;
 
 import java.io.FileInputStream;
 
@@ -26,7 +25,7 @@ public class Firebase {
             firebaseApp = FirebaseApp.initializeApp(options);
 
         } catch (Exception e) {
-            System.out.println("EBS -- Exception in application.eurditebattles init: " + e);
+            System.out.println("EBS -- Exception in application.ebs init: " + e);
         }
     }
 
