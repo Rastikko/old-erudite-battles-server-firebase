@@ -23,16 +23,8 @@ public class DrawCardCommand extends AbstractCommand {
     }
 
     public void execute(GameCommandModel command) {
-        // GamePlayer update draw card
-        CompletableFuture<DataSnapshot> futureDataSnapshot = gamePlayerHandler.getSubresourceValue(command.gamePlayer);
-        try {
-            futureDataSnapshot.thenAcceptAsync((dataSnapshot) -> {
-                GamePlayerModel player = dataSnapshot.getValue(GamePlayerModel.class);
-                System.out.println(player);
-            });
-        } catch (Exception e) {
-            System.out.println("EBS ERROR - futureDataSnapshot.thenAcceptAsync: " + e);
-        }
+        GamePlayerModel player = gamePlayerHandler.getSubresourceDataSnapshot(command.gamePlayer).getValue(GamePlayerModel.class);
+        System.out.println(player);
         // Update gamePhase commands to add this guy -> always
         // Resolve the command -> always
     }

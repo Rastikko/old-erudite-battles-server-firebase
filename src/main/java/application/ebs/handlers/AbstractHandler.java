@@ -10,39 +10,25 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Future;
 
 public abstract class AbstractHandler {
 
     DatabaseReference resourceReference;
-    Map<String, DatabaseReference> subresourceReferences;
+    Map<String, DatabaseReference> subresourceReferencesMap = new HashMap<>();
+    Map<String, DataSnapshot> subresourceDataSnapshotMap = new HashMap<>();
     String resource;
 
-    public void updateSubresource(String subresourceReferenceKey, Map<String, Object> update) {
-        this.subresourceReferences.get(subresourceReferenceKey).updateChildren(update);
+    public void updateSubresource(String subresourceKey, Map<String, Object> update) {
+        this.subresourceReferencesMap.get(subresourceKey).updateChildren(update);
     }
 
-    public CompletableFuture<DataSnapshot> getSubresourceValue(String subresourceReferenceKey) {
-        CompletableFuture<DataSnapshot> futureSnapShot = new CompletableFuture<>();
-        DatabaseReference reference = this.subresourceReferences.get(subresourceReferenceKey);
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                futureSnapShot.complete(dataSnapshot);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("CANCELED!!!");
-            }
-        });
-        return futureSnapShot;
+    public DataSnapshot getSubresourceDataSnapshot(String subresourceKey) {
+        return this.subresourceDataSnapshotMap.get(subresourceKey);
     }
-
+    
     void init(String resource) {
         this.resource = resource;
         this.resourceReference = FirebaseDatabase.getInstance().getReference(resource);
-        this.subresourceReferences = new HashMap<>();
 
         ChildEventListener listener = new ChildEventListener() {
             @Override
@@ -77,6 +63,7 @@ public abstract class AbstractHandler {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 onSubresourceValueChangeHandler(dataSnapshot);
+                subresourceDataSnapshotMap.put(subresource.getKey(), dataSnapshot);
             }
 
             @Override
@@ -85,7 +72,7 @@ public abstract class AbstractHandler {
 
         subresourceReference.addValueEventListener(listener);
 
-        this.subresourceReferences.put(subresourceReference.getKey(), subresourceReference);
+        this.subresourceReferencesMap.put(subresourceReference.getKey(), subresourceReference);
     }
 
     // TODO: this could be a lamda

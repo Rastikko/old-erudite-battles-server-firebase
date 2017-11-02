@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c960c54-bcdb-45fe-a39e-63a3b16e5041" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application/ebs/builders/GamePlayerBuilder.class" afterPath="$PROJECT_DIR$/target/classes/application/ebs/builders/GamePlayerBuilder.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/application/ebs/handlers/GamePlayerHandler$1.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application/ebs/commander/DrawCardCommand.class" afterPath="$PROJECT_DIR$/target/classes/application/ebs/commander/DrawCardCommand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application/ebs/handlers/AbstractHandler$1.class" afterPath="$PROJECT_DIR$/target/classes/application/ebs/handlers/AbstractHandler$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application/ebs/handlers/AbstractHandler$2.class" afterPath="$PROJECT_DIR$/target/classes/application/ebs/handlers/AbstractHandler$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application/ebs/handlers/AbstractHandler$3.class" afterPath="$PROJECT_DIR$/target/classes/application/ebs/handlers/AbstractHandler$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application/ebs/handlers/AbstractHandler.class" afterPath="$PROJECT_DIR$/target/classes/application/ebs/handlers/AbstractHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application/ebs/models/GamePlayerModel.class" afterPath="$PROJECT_DIR$/target/classes/application/ebs/models/GamePlayerModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application/ebs/handlers/GamePlayerHandler.class" afterPath="$PROJECT_DIR$/target/classes/application/ebs/handlers/GamePlayerHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/ebs/builders/GamePlayerBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/application/ebs/builders/GamePlayerBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/ebs/commander/DrawCardCommand.java" afterPath="$PROJECT_DIR$/src/main/java/application/ebs/commander/DrawCardCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/ebs/handlers/AbstractHandler.java" afterPath="$PROJECT_DIR$/src/main/java/application/ebs/handlers/AbstractHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/ebs/handlers/GamePlayerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/application/ebs/handlers/GamePlayerHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/ebs/models/GamePlayerModel.java" afterPath="$PROJECT_DIR$/src/main/java/application/ebs/models/GamePlayerModel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/erudite_battles_server$Application.coverage" NAME="Application Coverage Results" MODIFIED="1509553675953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/erudite_battles_server$Application.coverage" NAME="Application Coverage Results" MODIFIED="1509640937864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>application.api.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/eruditebattlesserver$Api.coverage" NAME="Api Coverage Results" MODIFIED="1508114225086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -56,17 +54,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AbstractHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/ebs/handlers/AbstractHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="e#1281#1282#0" expanded="true" />
-                <element signature="e#1350#1351#0" expanded="true" />
-                <element signature="e#1440#1441#0" expanded="true" />
-                <element signature="e#1505#1506#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,8 +89,8 @@
       <file leaf-file-name="DrawCardCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/ebs/commander/DrawCardCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="355">
+              <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,7 +98,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractCommand.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/ebs/commander/AbstractCommand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -231,9 +224,9 @@
         <option value="$PROJECT_DIR$/src/main/java/application/ebs/models/GameModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/ebs/models/GamePlayerModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/ebs/builders/GamePlayerBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/ebs/handlers/AbstractHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/ebs/commander/DrawCardCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/ebs/handlers/GamePlayerHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/ebs/commander/DrawCardCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/ebs/handlers/AbstractHandler.java" />
       </list>
     </option>
   </component>
@@ -560,15 +553,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/ebs/handlers/AbstractHandler.java</url>
-          <line>26</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="64" />
+      <option name="time" value="65" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -861,33 +846,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/ebs/handlers/AbstractHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#1281#1282#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1440#1441#0" expanded="true" />
-            <element signature="e#1505#1506#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/ebs/handlers/GamePlayerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/ebs/commander/DrawCardCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -901,6 +863,24 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/ebs/commander/DrawCardCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/ebs/handlers/AbstractHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
