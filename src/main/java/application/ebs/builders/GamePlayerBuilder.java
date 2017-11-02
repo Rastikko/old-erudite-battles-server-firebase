@@ -22,8 +22,8 @@ public class GamePlayerBuilder extends AbstractBuilder {
         Integer energy = 1;
         String battleType = BattleTypes.FACTORIZATION.name();
 
-        deckCards.put("1", true);
-        deckCards.put("2", true);
+        deckCards.put("Aristoteles", true);
+        deckCards.put("Socrates", true);
 
         GamePlayerModel gamePlayer = new GamePlayerModel();
         gamePlayer.eruditeName = eruditeName;
@@ -33,7 +33,7 @@ public class GamePlayerBuilder extends AbstractBuilder {
         gamePlayer.damageTaken = damageTaken;
         gamePlayer.energy = energy;
         gamePlayer.battleType = battleType;
-        gamePlayer.deckCards = deckCards;
+        //gamePlayer.deckCards = deckCards;
         gamePlayer.player = playerId;
         gamePlayer.game = gameId;
 

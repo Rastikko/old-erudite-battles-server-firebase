@@ -9,6 +9,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 
 public abstract class AbstractHandler {
 
@@ -18,6 +20,23 @@ public abstract class AbstractHandler {
 
     public void updateSubresource(String subresourceReferenceKey, Map<String, Object> update) {
         this.subresourceReferences.get(subresourceReferenceKey).updateChildren(update);
+    }
+
+    public CompletableFuture<DataSnapshot> getSubresourceValue(String subresourceReferenceKey) {
+        CompletableFuture<DataSnapshot> futureSnapShot = new CompletableFuture<>();
+        DatabaseReference reference = this.subresourceReferences.get(subresourceReferenceKey);
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                futureSnapShot.complete(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("CANCELED!!!");
+            }
+        });
+        return futureSnapShot;
     }
 
     void init(String resource) {
