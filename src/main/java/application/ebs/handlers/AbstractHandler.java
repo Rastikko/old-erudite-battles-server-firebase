@@ -75,6 +75,5 @@ public abstract class AbstractHandler {
         this.subresourceReferencesMap.put(subresourceReference.getKey(), subresourceReference);
     }
 
-    // TODO: this could be a lamda
     protected abstract void onSubresourceValueChangeHandler(DataSnapshot dataSnapshot);
 }

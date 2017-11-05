@@ -1,15 +1,27 @@
 package application.ebs.commander;
 
-import application.ebs.handlers.CommandHandler;
+import application.ebs.handlers.GameCommandHandler;
 import application.ebs.models.GameCommandModel;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import com.google.firebase.database.DataSnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class AbstractCommand {
 
-    protected CommandHandler commandHandler;
+    GameCommandHandler commandHandler;
+    DataSnapshot gameCommandDataSnapshot;
 
-    protected void resolveCommand(GameCommandModel command) {
-
+    public AbstractCommand(DataSnapshot gameCommandDataSnapshot) {
+        this.gameCommandDataSnapshot = gameCommandDataSnapshot;
     }
+
+    public void resolve() {
+//        Map<String, Object> commandUpdate = new HashMap<>();
+//        commandUpdate.put("resolved", true);
+//        commandHandler.updateSubresource(commandModel.);
+    }
+
+    public abstract void execute();
+
 }

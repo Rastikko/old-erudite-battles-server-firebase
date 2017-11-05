@@ -25,7 +25,7 @@ public class Firebase {
             firebaseApp = FirebaseApp.initializeApp(options);
 
         } catch (Exception e) {
-            System.out.println("EBS -- Exception in application.ebs init: " + e);
+            System.out.println("EBS ERROR - Exception in Firebase init: " + e);
         }
     }
 
