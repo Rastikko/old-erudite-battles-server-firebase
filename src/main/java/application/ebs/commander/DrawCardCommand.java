@@ -9,6 +9,8 @@ import com.google.firebase.database.DataSnapshot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 
@@ -20,11 +22,27 @@ public class DrawCardCommand extends AbstractCommand {
 
     public DrawCardCommand(CommandHandler commandHandler) {
         this.commandHandler = commandHandler;
+
     }
 
     public void execute(GameCommandModel command) {
-        GamePlayerModel player = gamePlayerHandler.getSubresourceDataSnapshot(command.gamePlayer).getValue(GamePlayerModel.class);
+        DataSnapshot gamePlayerDataSnapshot = gamePlayerHandler.getSubresourceDataSnapshot(command.gamePlayer);
+        GamePlayerModel player = gamePlayerDataSnapshot.getValue(GamePlayerModel.class);
         System.out.println(player);
+
+        Map.Entry<String,Boolean> newCard = player.deckCards.entrySet().iterator().next();
+
+        player.deckCards.remove(newCard.getKey());
+        player.handCards.put(newCard.getKey(), true);
+
+
+        Map<String, Object> playerUpdate = new HashMap<>();
+        playerUpdate.put("deckCards", player.deckCards);
+        playerUpdate.put("handCards", player.handCards);
+
+        gamePlayerHandler.updateSubresource(gamePlayerDataSnapshot.getKey(), playerUpdate);
+
+        // TODO
         // Update gamePhase commands to add this guy -> always
         // Resolve the command -> always
     }

@@ -9,24 +9,24 @@ import java.util.Map;
 @IgnoreExtraProperties
 public class GamePlayerModel {
     public String eruditeName;
-    public Integer baseAttack;
-    public Integer baseBarrier;
-    public Integer baseHealth;
-    public Integer damageTaken;
+    public Integer attack;
+    public Integer barrier;
+    public Integer totalHealth;
+    public Integer health;
     public Integer energy;
     public String battleType;
     public Map<String, Boolean> deckCards = new HashMap<>();
-    //public Map<String, Boolean> handCards;
+    public Map<String, Boolean> handCards = new HashMap<>();
     public String player;
     public String game;
 
     public GamePlayerModel() {
 
     }
-
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        return result;
-    }
+//
+//    @Exclude
+//    public Map<String, Object> toMap() {
+//        HashMap<String, Object> result = new HashMap<>();
+//        return result;
+//    }
 }

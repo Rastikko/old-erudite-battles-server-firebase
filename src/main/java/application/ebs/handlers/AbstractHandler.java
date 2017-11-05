@@ -25,7 +25,7 @@ public abstract class AbstractHandler {
     public DataSnapshot getSubresourceDataSnapshot(String subresourceKey) {
         return this.subresourceDataSnapshotMap.get(subresourceKey);
     }
-    
+
     void init(String resource) {
         this.resource = resource;
         this.resourceReference = FirebaseDatabase.getInstance().getReference(resource);

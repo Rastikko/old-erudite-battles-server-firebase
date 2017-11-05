@@ -15,10 +15,10 @@ public class GamePlayerBuilder extends AbstractBuilder {
         Map<String, Boolean> deckCards = new HashMap<>();
 
         String eruditeName = "Peter Shor";
-        Integer baseAttack = 200;
-        Integer baseBarrier = 100;
-        Integer baseHealth = 500;
-        Integer damageTaken = 0;
+        Integer attack = 200;
+        Integer barrier = 100;
+        Integer totalHealth = 500;
+        Integer health = 0;
         Integer energy = 1;
         String battleType = BattleTypes.FACTORIZATION.name();
 
@@ -27,13 +27,13 @@ public class GamePlayerBuilder extends AbstractBuilder {
 
         GamePlayerModel gamePlayer = new GamePlayerModel();
         gamePlayer.eruditeName = eruditeName;
-        gamePlayer.baseAttack = baseAttack;
-        gamePlayer.baseBarrier = baseBarrier;
-        gamePlayer.baseHealth = baseHealth;
-        gamePlayer.damageTaken = damageTaken;
+        gamePlayer.attack = attack;
+        gamePlayer.barrier = barrier;
+        gamePlayer.health = health;
+        gamePlayer.totalHealth = totalHealth;
         gamePlayer.energy = energy;
         gamePlayer.battleType = battleType;
-        //gamePlayer.deckCards = deckCards;
+        gamePlayer.deckCards = deckCards;
         gamePlayer.player = playerId;
         gamePlayer.game = gameId;
 
