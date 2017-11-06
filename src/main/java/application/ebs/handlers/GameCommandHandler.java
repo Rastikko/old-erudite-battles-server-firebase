@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class GameCommandHandler extends AbstractHandler {
 
-    @Autowired
-    Commander commander;
+//    @Autowired
+//    Commander commander;
 
     public GameCommandHandler() {
         init("gameCommands");

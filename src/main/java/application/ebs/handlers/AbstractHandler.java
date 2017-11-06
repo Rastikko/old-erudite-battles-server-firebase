@@ -46,8 +46,12 @@ public abstract class AbstractHandler {
             public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {}
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("EBS ERROR - onCancelled resource listener: " + databaseError);
+            }
         };
+
+        System.out.println("EBS - Adding resourceReference: " + this.resourceReference.getKey());
 
         this.resourceReference.addChildEventListener(listener);
     }
