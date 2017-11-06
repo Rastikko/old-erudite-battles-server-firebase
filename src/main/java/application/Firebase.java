@@ -3,11 +3,12 @@ package application;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseCredentials;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Logger;
 
 import java.io.FileInputStream;
 
 public class Firebase {
-    public static FirebaseApp firebaseApp;
 
     public Firebase() {
         init();
@@ -22,7 +23,11 @@ public class Firebase {
                     .setDatabaseUrl("https://erudite-battles.firebaseio.com/")
                     .build();
 
-            firebaseApp = FirebaseApp.initializeApp(options);
+            FirebaseApp.initializeApp(options);
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+//            database.setLogLevel(Logger.Level.DEBUG);
+
 
         } catch (Exception e) {
             System.out.println("EBS ERROR - Exception in Firebase init: " + e);

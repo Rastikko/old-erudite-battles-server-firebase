@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class GameCommandHandler extends AbstractHandler {
 
-//    @Autowired
-//    Commander commander;
+    @Autowired
+    Commander commander;
 
     public GameCommandHandler() {
         init("gameCommands");
@@ -19,6 +19,6 @@ public class GameCommandHandler extends AbstractHandler {
 
     @Override
     protected void onSubresourceValueChangeHandler(DataSnapshot dataSnapshot) {
-//        commander.handle(dataSnapshot);
+        commander.handle(dataSnapshot);
     }
 }
