@@ -13,17 +13,14 @@ import java.util.Map;
 
 public class DrawCardCommand extends AbstractCommand {
 
-    GamePlayerHandler gamePlayerHandler;
-
-    public DrawCardCommand(DataSnapshot gameCommandDataSnapshot, GameCommandHandler  gameCommandHandler, GamePlayerHandler gamePlayerHandler) {
-        super(gameCommandDataSnapshot, gameCommandHandler);
-        this.gamePlayerHandler = gamePlayerHandler;
+    public DrawCardCommand(Commander commander, DataSnapshot gameCommandDataSnapshot) {
+        super(commander, gameCommandDataSnapshot);
     }
 
     @Override
     public void execute() {
-        GameCommandModel command = gameCommandDataSnapshot.getValue(GameCommandModel.class);
-        DataSnapshot gamePlayerDataSnapshot = gamePlayerHandler.getSubresourceDataSnapshot(command.gamePlayer);
+        GameCommandModel command = this.gameCommandDataSnapshot.getValue(GameCommandModel.class);
+        DataSnapshot gamePlayerDataSnapshot = this.commander.gamePlayerHandler.getSubresourceDataSnapshot(command.gamePlayer);
         GamePlayerModel player = gamePlayerDataSnapshot.getValue(GamePlayerModel.class);
 
         if (player.deckCards.entrySet().size() == 0) {
@@ -40,6 +37,6 @@ public class DrawCardCommand extends AbstractCommand {
         playerUpdate.put("deckCards", player.deckCards);
         playerUpdate.put("handCards", player.handCards);
 
-        gamePlayerHandler.updateSubresource(gamePlayerDataSnapshot.getKey(), playerUpdate);
+        this.commander.gamePlayerHandler.updateSubresource(gamePlayerDataSnapshot.getKey(), playerUpdate);
     }
 }

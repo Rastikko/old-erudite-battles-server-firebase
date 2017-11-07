@@ -12,18 +12,18 @@ import java.util.Map;
 @Component
 public abstract class AbstractCommand {
 
-    GameCommandHandler gameCommandHandler;
+    Commander commander;
     DataSnapshot gameCommandDataSnapshot;
 
-    public AbstractCommand(DataSnapshot gameCommandDataSnapshot, GameCommandHandler gameCommandHandler) {
+    public AbstractCommand(Commander commander, DataSnapshot gameCommandDataSnapshot) {
         this.gameCommandDataSnapshot = gameCommandDataSnapshot;
-        this.gameCommandHandler = gameCommandHandler;
+        this.commander = commander;
     }
 
     public void resolve() {
         Map<String, Object> commandUpdate = new HashMap<>();
         commandUpdate.put("resolved", true);
-        gameCommandHandler.updateSubresource(gameCommandDataSnapshot.getKey(), commandUpdate);
+        this.commander.gameCommandHandler.updateSubresource(gameCommandDataSnapshot.getKey(), commandUpdate);
     }
 
     public abstract void execute();

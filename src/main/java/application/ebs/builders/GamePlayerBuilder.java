@@ -17,9 +17,9 @@ public class GamePlayerBuilder extends AbstractBuilder {
         String eruditeName = "Peter Shor";
         Integer attack = 200;
         Integer barrier = 100;
+        Integer health = 500;
         Integer totalHealth = 500;
-        Integer health = 0;
-        Integer energy = 1;
+        Integer energy = 0;
         String battleType = BattleTypes.FACTORIZATION.name();
 
         deckCards.put("Aristoteles", true);
