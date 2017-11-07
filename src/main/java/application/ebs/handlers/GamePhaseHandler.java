@@ -18,8 +18,7 @@ public class GamePhaseHandler extends AbstractHandler {
 
     @Override
     protected void onSubresourceValueChangeHandler(DataSnapshot dataSnapshot) {
-        GamePhaseModel gamePhase = dataSnapshot.getValue(GamePhaseModel.class);
-        phaser.setPhaseModel(gamePhase);
+        phaser.setPhaseModel(dataSnapshot);
     }
 
 }
