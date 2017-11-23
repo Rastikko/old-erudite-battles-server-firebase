@@ -13,8 +13,8 @@ public class Phaser {
 
     @Autowired
     GameHandler gameHandler;
-//    @Autowired
-//    GamePhaseHandler gamePhaseHandler;
+    @Autowired
+    GamePhaseHandler gamePhaseHandler;
 
     public void setPhaseModel(DataSnapshot phaseDataSnapshot) {
         Phase state;

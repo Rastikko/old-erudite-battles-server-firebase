@@ -26,11 +26,11 @@ public class IntialDrawPhase extends AbstractPhase implements Phase {
             Map<String, Object> gameUpdate = new HashMap<>();
             gameUpdate.put("gamePhase", newGamePhase.getReference().getKey());
 
-//            Map<String, Object> phaseUpdate = new HashMap<>();
-//            gameUpdate.put("resolved", true);
+            Map<String, Object> phaseUpdate = new HashMap<>();
+            phaseUpdate.put("resolved", true);
 
             this.phaser.gameHandler.updateSubresource(this.gamePhaseModel.game, gameUpdate);
-//            this.phaser.gamePhaseHandler.updateSubresource(this.gamePhaseDataSnapshot.getKey(), phaseUpdate);
+            this.phaser.gamePhaseHandler.updateSubresource(this.gamePhaseDataSnapshot.getKey(), phaseUpdate);
         }
     }
 

@@ -16,6 +16,7 @@ public class GamePhaseBuilder extends AbstractBuilder {
         GamePhaseModel phase = new GamePhaseModel();
         phase.gamePhaseType = gamePhaseType;
         phase.game = gameId;
+        phase.resolved = false;
 
         save(phase);
     }
