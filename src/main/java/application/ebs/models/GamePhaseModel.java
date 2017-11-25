@@ -8,5 +8,4 @@ public class GamePhaseModel {
     public String game;
     public Boolean resolved;
     public Map<String, Boolean> gameCommands = new HashMap<>();
-    public Map<String, Boolean> phaseEndGamePlayers = new HashMap<>();
 }

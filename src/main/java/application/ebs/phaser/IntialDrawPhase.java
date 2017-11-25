@@ -18,9 +18,8 @@ public class IntialDrawPhase extends AbstractPhase implements Phase {
     public void checkPhase() {
         System.out.println("EBS - Checking phase " + this.gamePhaseModel);
 
-        // TODO: should be 2 players
-        // TODO: also we should compare against a timestap, and if it timeout resolve commmands for the user and recheck in 100ms
-        if (gamePhaseModel.phaseEndGamePlayers.size() > 0) {
+        Boolean phaseIsDone = getPhaseIsDone();
+        if (phaseIsDone) {
             GamePhaseBuilder newGamePhase = new GamePhaseBuilder(this.gamePhaseModel.game, GamePhaseTypes.GATHER_RESOURCES.name());
 
             Map<String, Object> gameUpdate = new HashMap<>();
@@ -36,6 +35,6 @@ public class IntialDrawPhase extends AbstractPhase implements Phase {
 
     @Override
     public void checkBotCommands() {
-
+        ensureBotIsDone();
     }
 }

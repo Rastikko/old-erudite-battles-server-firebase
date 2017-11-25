@@ -4,6 +4,7 @@ import application.ebs.models.GamePhaseModel;
 import application.ebs.phaser.Phaser;
 import com.google.firebase.database.DataSnapshot;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,7 +19,7 @@ public class GamePhaseHandler extends AbstractHandler {
 
     @Override
     protected void onSubresourceValueChangeHandler(DataSnapshot dataSnapshot) {
-        phaser.setPhaseModel(dataSnapshot);
+        phaser.processPhase(dataSnapshot.getKey());
     }
 
 }

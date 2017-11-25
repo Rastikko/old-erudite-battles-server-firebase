@@ -19,6 +19,7 @@ public class GamePlayerModel {
     public Map<String, Boolean> handCards = new HashMap<>();
     public String player;
     public String game;
+    public String key;
 
     public GamePlayerModel() {
 
