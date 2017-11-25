@@ -20,7 +20,7 @@ public class IntialDrawPhase extends AbstractPhase implements Phase {
 
         Boolean phaseIsDone = getPhaseIsDone();
         if (phaseIsDone) {
-            GamePhaseBuilder newGamePhase = new GamePhaseBuilder(this.gamePhaseModel.game, GamePhaseTypes.GATHER_RESOURCES.name());
+            GamePhaseBuilder newGamePhase = new GamePhaseBuilder(this.gamePhaseModel.game, GamePhaseTypes.GATHER.name());
 
             Map<String, Object> gameUpdate = new HashMap<>();
             gameUpdate.put("gamePhase", newGamePhase.getReference().getKey());

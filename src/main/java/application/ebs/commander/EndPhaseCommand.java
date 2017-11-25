@@ -15,15 +15,5 @@ public class EndPhaseCommand extends AbstractCommand {
     }
 
     @Override
-    public void execute() {
-//        GameCommandModel command = this.gameCommandDataSnapshot.getValue(GameCommandModel.class);
-//
-//        Map<String, Object> phaseUpdate = new HashMap<>();
-//        Map<String, Boolean> phaseEndGamePlayersUpdate = new HashMap<>();
-//        phaseEndGamePlayersUpdate.put(command.gamePlayer, true);
-//        phaseUpdate.put("phaseEndGamePlayers", phaseEndGamePlayersUpdate);
-//
-//        this.commander.gamePhaseHandler.updateSubresource(command.gamePhase, phaseUpdate);
-        // TODO: just call phaser to check if the phase is done
-    }
+    public void execute() {}
 }

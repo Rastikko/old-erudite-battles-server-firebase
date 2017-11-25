@@ -26,14 +26,20 @@ public class Commander {
         }
         System.out.println("EBS - Executing command: " + commandModel.gameCommandType);
         AbstractCommand command;
-        String commmandType = commandModel.gameCommandType;
-        if (commmandType.equals(GameCommandsTypes.DRAW_CARD.name())) {
-            command = new DrawCardCommand(this, commandDataSnapshot);
-        } else if (commmandType.equals(GameCommandsTypes.END_PHASE.name())) {
-            command = new EndPhaseCommand(this, commandDataSnapshot);
-        } else {
-            System.out.println("EBS ERROR - Commander cannot handle command: " + commandModel.gameCommandType);
-            return;
+        GameCommandsTypes commmandType = GameCommandsTypes.valueOf(commandModel.gameCommandType);
+        switch (commmandType) {
+            case DRAW_CARD:
+                command = new DrawCardCommand(this, commandDataSnapshot);
+                break;
+            case END_PHASE:
+                command = new EndPhaseCommand(this, commandDataSnapshot);
+                break;
+            case GATHER_ENERGY:
+                command = new GatherEnergyCommand(this, commandDataSnapshot);
+                break;
+            default:
+                System.out.println("EBS ERROR - Commander cannot handle command: " + commandModel.gameCommandType);
+                return;
         }
         command.execute();
         command.resolve();
