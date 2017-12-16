@@ -24,10 +24,4 @@ public class GamePlayerModel {
     public GamePlayerModel() {
 
     }
-//
-//    @Exclude
-//    public Map<String, Object> toMap() {
-//        HashMap<String, Object> result = new HashMap<>();
-//        return result;
-//    }
 }

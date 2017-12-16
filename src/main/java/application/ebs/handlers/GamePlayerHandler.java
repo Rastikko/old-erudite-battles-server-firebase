@@ -9,11 +9,5 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GamePlayerHandler extends AbstractHandler {
-
     public GamePlayerHandler() { init("gamePlayers"); }
-
-    @Override
-    protected void onSubresourceValueChangeHandler(DataSnapshot dataSnapshot) {
-        // Check if is a bot and handle his phases somehow
-    }
 }

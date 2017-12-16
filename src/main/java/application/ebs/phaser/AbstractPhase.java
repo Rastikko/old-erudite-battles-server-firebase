@@ -101,9 +101,6 @@ public abstract class AbstractPhase {
         Map<String, Object> phaseUpdate = new HashMap<>();
         phaseUpdate.put("gameCommands", gameCommands);
         phaser.gamePhaseHandler.updateSubresource(gamePhaseDataSnapshot.getKey(), phaseUpdate) ;
-
-//        this.commander.gamePlayerHandler.updateSubresource(gamePlayerDataSnapshot.getKey(), playerUpdate);
-
     }
 
     void ensureBotIsDone() {

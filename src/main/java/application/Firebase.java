@@ -7,6 +7,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Logger;
 import com.google.firebase.database.ValueEventListener;
 import org.springframework.core.io.ClassPathResource;
 
@@ -14,11 +15,7 @@ import java.io.InputStream;
 
 public class Firebase {
 
-    public Firebase() {
-        init();
-    }
-
-    public void init() {
+    public static void init() {
         try {
             String fileLocationInClasspath = "erudite-battles-0de6d72b4d6d.json";
             ClassPathResource resource = new ClassPathResource(fileLocationInClasspath);

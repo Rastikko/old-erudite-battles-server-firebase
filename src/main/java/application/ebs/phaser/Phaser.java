@@ -49,8 +49,31 @@ public class Phaser {
         }
 
         state.checkPhase();
-        state.checkBotCommands();
+//        state.checkBotCommands();
+    }
 
+    public void checkBot(String phaseKey) {
+        Phase state;
+
+        DataSnapshot phaseDataSnapshot = gamePhaseHandler.getSubresourceDataSnapshot(phaseKey);
+        GamePhaseModel phaseModel = phaseDataSnapshot.getValue(GamePhaseModel.class);
+        GamePhaseTypes phaseType = GamePhaseTypes.valueOf(phaseModel.gamePhaseType);
+
+        if (phaseModel.resolved) {
+            System.out.println("EBS - PHASE ALREADY RESOLVED: " + phaseType);
+            return;
+        }
+
+        switch (phaseType) {
+            case INITIAL_DRAW:
+                state = new IntialDrawPhase(this, phaseDataSnapshot);
+                break;
+            default:
+                System.out.println("EBS ERROR - gamePhaseType not found in Phaser: " + phaseType);
+                return;
+        }
+
+        state.checkBotCommands();
     }
 
     public void processPhase(String phaseKey) {

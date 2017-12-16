@@ -11,6 +11,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CountDownLatch;
 
 public abstract class AbstractHandler {
 
@@ -24,7 +25,39 @@ public abstract class AbstractHandler {
     }
 
     public DataSnapshot getSubresourceDataSnapshot(String subresourceKey) {
-        return this.subresourceDataSnapshotMap.get(subresourceKey);
+        if (this.subresourceDataSnapshotMap.containsKey(subresourceKey)) {
+            return this.subresourceDataSnapshotMap.get(subresourceKey);
+        }
+
+        final CountDownLatch retrieve = new CountDownLatch(1);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference(this.resource ).child(subresourceKey);
+
+        class AwaitedValueListener implements ValueEventListener {
+            public DataSnapshot snapshot;
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                snapshot = dataSnapshot;
+                retrieve.countDown();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                retrieve.countDown();
+            }
+        }
+
+        AwaitedValueListener listener = new AwaitedValueListener();
+        ref.addListenerForSingleValueEvent(listener);
+
+        try {
+            retrieve.await();
+            return listener.snapshot;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     void init(String resource) {
@@ -81,5 +114,5 @@ public abstract class AbstractHandler {
         this.subresourceReferencesMap.put(subresourceReference.getKey(), subresourceReference);
     }
 
-    protected abstract void onSubresourceValueChangeHandler(DataSnapshot dataSnapshot);
+    protected void onSubresourceValueChangeHandler(DataSnapshot dataSnapshot) {};
 }
